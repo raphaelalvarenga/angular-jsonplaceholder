@@ -1,1 +1,6 @@
-<p>posts works!</p>
+<div *ngFor="let post of posts$ | async" class="post-container">
+  <div class="post-title">Título</div>
+  <div class="post-body">Corpo</div>
+  <div>Comentários</div>
+  <hr />
+</div>

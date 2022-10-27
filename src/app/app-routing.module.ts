@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'albums', component: AlbumsComponent },
   { path: 'comments', component: CommentsComponent },
   { path: 'photos', component: PhotosComponent },
-  { path: 'posts', component: PostsComponent },
+  { path: '', component: PostsComponent },
   { path: 'users', component: UsersComponent },
 ];
 

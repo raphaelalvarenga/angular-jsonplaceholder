@@ -8,6 +8,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { PhotosComponent } from './photos/photos.component';
 import { UsersComponent } from './users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,10 @@ import { UsersComponent } from './users/users.component';
     CommentsComponent,
     AlbumsComponent,
     PhotosComponent,
-    UsersComponent
+    UsersComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
