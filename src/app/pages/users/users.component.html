@@ -17,7 +17,7 @@
     <tbody>
         <tr *ngFor="let author of authors$ | async">
             <td>
-                <a href="#">{{ author.name }}</a>
+                <a [routerLink]="author.id.toString()">{{ author.name }}</a>
             </td>
             <td>{{ author.username }}</td>
             <td>{{ author.email }}</td>

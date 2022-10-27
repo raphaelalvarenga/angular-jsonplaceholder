@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { Author } from "src/assets/interfaces/author.interface";
-import { ApiService } from "../services/api.service";
+import { ApiService } from "../../services/api.service";
 
 @Component({
     selector: "app-users",

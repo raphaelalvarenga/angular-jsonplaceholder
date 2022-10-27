@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { forkJoin, Observable } from "rxjs";
 import { Post } from "src/assets/interfaces/post.interface";
-import { ApiService } from "../services/api.service";
+import { ApiService } from "../../services/api.service";
 
 @Component({
     selector: "app-posts",
