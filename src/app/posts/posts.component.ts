@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { Post } from 'src/assets/interfaces/post.interface';
 import { ApiService } from '../services/api.service';
 
@@ -9,11 +9,22 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-  posts$: Observable<Post[]> | null = null;
+  posts: Post[] = [];
 
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.posts$ = this.api.getPosts();
+    forkJoin({
+      posts: this.api.getPosts(),
+      comments: this.api.getComments(),
+    }).subscribe({
+      next: ({ posts, comments }) => {
+        this.posts = posts.map((post) => ({
+          ...post,
+          comments: comments.filter(({ postId }) => postId === post.id),
+        }));
+      },
+      error: (error) => console.log(error),
+    });
   }
 }
