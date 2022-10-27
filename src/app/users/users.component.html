@@ -1,1 +1,26 @@
-<p>users works!</p>
+<ul>
+    <li *ngFor="let author of authors$ | async">
+        <div>Name: {{ author.name }}</div>
+        <div>User: {{ author.username }}</div>
+        <div>Email: {{ author.email }}</div>
+    </li>
+</ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>User</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let author of authors$ | async">
+            <td>
+                <a href="#">{{ author.name }}</a>
+            </td>
+            <td>{{ author.username }}</td>
+            <td>{{ author.email }}</td>
+        </tr>
+    </tbody>
+</table>

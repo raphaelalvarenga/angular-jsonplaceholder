@@ -1,4 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { Author } from "src/assets/interfaces/author.interface";
+import { ApiService } from "../services/api.service";
 
 @Component({
     selector: "app-users",
@@ -6,7 +9,11 @@ import { Component, OnInit } from "@angular/core";
     styleUrls: ["./users.component.scss"],
 })
 export class UsersComponent implements OnInit {
-    constructor() {}
+    authors$: Observable<Author[]> | null = null;
 
-    ngOnInit(): void {}
+    constructor(private api: ApiService) {}
+
+    ngOnInit(): void {
+        this.authors$ = this.api.getAuthors();
+    }
 }

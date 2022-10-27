@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: block;
+}
+
+table {
+    display: none;
+}
+
+@media only screen and (min-width: 900px) {
+    ul {
+        display: none;
+    }
+
+    table {
+        display: table;
+    }
+
+    table tbody tr {
+        cursor: pointer;
+    }
+
+    table tbody tr:hover {
+        background-color: rgb(200, 200, 200);
+    }
+}

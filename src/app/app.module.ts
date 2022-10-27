@@ -9,6 +9,7 @@ import { AlbumsComponent } from "./albums/albums.component";
 import { PhotosComponent } from "./photos/photos.component";
 import { UsersComponent } from "./users/users.component";
 import { HttpClientModule } from "@angular/common/http";
+import { UserComponent } from './user/user.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from "@angular/common/http";
         AlbumsComponent,
         PhotosComponent,
         UsersComponent,
+        UserComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],
