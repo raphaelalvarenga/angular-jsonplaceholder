@@ -23,4 +23,8 @@ export class ApiService {
     getAuthors() {
         return this.http.get<Author[]>(`${api}/users`);
     }
+
+    getAuthor(id: number) {
+        return this.http.get<Author>(`${api}/users/${id}`);
+    }
 }

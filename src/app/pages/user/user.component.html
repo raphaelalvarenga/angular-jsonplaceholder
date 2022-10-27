@@ -1,1 +1,39 @@
-<p>user works!</p>
+<div id="user-container"><span>Name:</span> {{ user.name }}</div>
+
+<hr />
+
+<h3>Contact</h3>
+<div id="user-contacts">
+    <div><span>User:</span> {{ user.username }}</div>
+    <div><span>Email:</span> {{ user.email }}</div>
+    <div><span>Phone:</span> {{ user.phone }}</div>
+</div>
+
+<hr />
+
+<h3>Address</h3>
+<div id="user-address">
+    <div><span>Street: </span>{{ user.address.street }}</div>
+    <div><span>Suite: </span>{{ user.address.suite }}</div>
+    <div><span>City: </span>{{ user.address.city }}</div>
+    <div><span>Zipcode: </span>{{ user.address.zipcode }}</div>
+</div>
+<div>
+    <h3>Geo</h3>
+    <div><span>Lat: </span>{{ user.address.geo.lat }}</div>
+    <div><span>Lng: </span>{{ user.address.geo.lng }}</div>
+</div>
+
+<hr />
+
+<h3>Company</h3>
+<div>
+    <div><span>Name: </span>{{ user.company.name }}</div>
+    <div><span>Catch Phrase: </span>{{ user.company.catchPhrase }}</div>
+    <div><span>BS: </span>{{ user.company.bs }}</div>
+</div>
+
+<hr />
+
+<h3>Website</h3>
+<a [href]="user.website" target="_blank">{{ user.website }}</a>
