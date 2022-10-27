@@ -1,6 +1,9 @@
 <div *ngFor="let post of posts" class="post-container">
     <div class="post-header">
-        <div class="post-author">{{ post.userName }} says:</div>
+        <div class="post-author">
+            <a [routerLink]="['/users', post.userId]">{{ post.userName }}</a>
+            says:
+        </div>
         <div class="post-title">{{ post.title }}</div>
     </div>
 
