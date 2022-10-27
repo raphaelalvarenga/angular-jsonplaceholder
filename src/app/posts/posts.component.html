@@ -1,6 +1,15 @@
 <div *ngFor="let post of posts" class="post-container">
-    <div class="post-title">Título</div>
-    <div class="post-body">Corpo</div>
-    <div *ngFor="let comment of post.comments">Comentários</div>
-    <hr />
+    <div class="post-header">
+        <div class="post-author">{{ post.userName }} says:</div>
+        <div class="post-title">{{ post.title }}</div>
+    </div>
+
+    <div class="post-body">{{ post.body }}</div>
+
+    <div class="comment-container">
+        <div *ngFor="let comment of post.comments">
+            <div class="comment-user-name">{{ comment.name }}</div>
+            <div class="body-comment">{{ comment.body }}</div>
+        </div>
+    </div>
 </div>

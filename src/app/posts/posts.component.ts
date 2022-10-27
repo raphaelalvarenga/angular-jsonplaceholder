@@ -17,13 +17,17 @@ export class PostsComponent implements OnInit {
         forkJoin({
             posts: this.api.getPosts(),
             comments: this.api.getComments(),
+            authors: this.api.getAuthors(),
         }).subscribe({
-            next: ({ posts, comments }) => {
+            next: ({ posts, comments, authors }) => {
                 this.posts = posts.map((post) => ({
                     ...post,
                     comments: comments.filter(
                         ({ postId }) => postId === post.id
                     ),
+                    userName: authors.find(
+                        (author) => author.id === post.userId
+                    )!.name,
                 }));
             },
             error: (error) => console.log(error),

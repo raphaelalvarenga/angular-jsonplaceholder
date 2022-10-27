@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Author } from "src/assets/interfaces/author.interface";
 import { Comment } from "src/assets/interfaces/comment.interface";
 import { Post } from "src/assets/interfaces/post.interface";
 
@@ -17,5 +18,9 @@ export class ApiService {
 
     getComments() {
         return this.http.get<Comment[]>(`${api}/comments`);
+    }
+
+    getAuthors() {
+        return this.http.get<Author[]>(`${api}/users`);
     }
 }
