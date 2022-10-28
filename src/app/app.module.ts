@@ -11,6 +11,7 @@ import { UsersComponent } from "./pages/users/users.component";
 import { HttpClientModule } from "@angular/common/http";
 import { UserComponent } from "./pages/user/user.component";
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NewUserComponent } from './pages/new-user/new-user.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
         UsersComponent,
         UserComponent,
         NavbarComponent,
+        NewUserComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],

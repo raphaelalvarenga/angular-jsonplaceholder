@@ -1,3 +1,7 @@
+<div id="users-panel">
+    <a routerLink="/new-user">Add user</a>
+</div>
+
 <ul>
     <li *ngFor="let author of authors$ | async">
         <div>Name: {{ author.name }}</div>

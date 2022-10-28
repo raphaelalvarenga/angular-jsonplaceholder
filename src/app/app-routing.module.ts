@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AlbumsComponent } from "./pages/albums/albums.component";
 import { CommentsComponent } from "./pages/comments/comments.component";
+import { NewUserComponent } from "./pages/new-user/new-user.component";
 import { PhotosComponent } from "./pages/photos/photos.component";
 import { PostsComponent } from "./pages/posts/posts.component";
 import { UserComponent } from "./pages/user/user.component";
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: "", component: PostsComponent },
     { path: "users/:id", component: UserComponent },
     { path: "users", component: UsersComponent },
+    { path: "new-user", component: NewUserComponent },
 ];
 
 @NgModule({
