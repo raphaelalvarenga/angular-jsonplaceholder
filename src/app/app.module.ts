@@ -10,8 +10,9 @@ import { PhotosComponent } from "./pages/photos/photos.component";
 import { UsersComponent } from "./pages/users/users.component";
 import { HttpClientModule } from "@angular/common/http";
 import { UserComponent } from "./pages/user/user.component";
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { NewUserComponent } from './pages/new-user/new-user.component';
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { NewUserComponent } from "./pages/new-user/new-user.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -25,7 +26,12 @@ import { NewUserComponent } from './pages/new-user/new-user.component';
         NavbarComponent,
         NewUserComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

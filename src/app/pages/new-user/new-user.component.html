@@ -1,1 +1,104 @@
-<p>new-user works!</p>
+<form [formGroup]="userForm">
+    <h3>Personal Info:</h3>
+    <label for="name">Name:</label>
+    <input id="name" type="text" placeholder="Name" formControlName="name" />
+
+    <label for="username">Username:</label>
+    <input
+        id="username"
+        type="text"
+        placeholder="Username"
+        formControlName="username"
+    />
+
+    <label for="email ">Email:</label>
+    <input id="email" type="text" placeholder="Email" formControlName="email" />
+
+    <label for="phone ">Phone:</label>
+    <input id="phone" type="text" placeholder="Phone" formControlName="phone" />
+
+    <h3>Address:</h3>
+    <div formGroupName="address">
+        <div id="street-suite-container">
+            <div id="street-container">
+                <label for="street">Street:</label>
+                <input
+                    id="street"
+                    type="text"
+                    placeholder="Street"
+                    formControlName="street"
+                />
+            </div>
+            <div style="margin-left: 15px">
+                <label for="suite">Suite:</label>
+                <input
+                    id="suite"
+                    placeholder="Suite"
+                    type="text"
+                    formControlName="suite"
+                />
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <label for="city">City:</label>
+                <input
+                    type="text"
+                    placeholder="City"
+                    formControlName="city"
+                    id="city"
+                />
+            </div>
+            <div>
+                <label for="zipcode">Zipcode:</label>
+                <input
+                    type="text"
+                    placeholder="Zipcode"
+                    formControlName="zipcode"
+                    id="zipcode"
+                />
+            </div>
+            <div formGroupName="geo">
+                <div>
+                    <label for="lat">Lat:</label>
+                    <input
+                        type="text"
+                        placeholder="Lat"
+                        formControlName="lat"
+                        id="lat"
+                    />
+                </div>
+
+                <div>
+                    <label for="lng">Lng:</label
+                    ><input
+                        type="text"
+                        id="lng"
+                        placeholder="Lng"
+                        formControlName="lng"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Social Media</h3>
+    <div>
+        <label for="website">Website:</label>
+        <input
+            type="text"
+            placeholder="website"
+            id="website"
+            formControlName="website"
+        />
+    </div>
+
+    <h3>Professional</h3>
+    <div>
+        <label for="company">Company:</label>
+        <input type="text" placeholder="Company" id="company" />
+    </div>
+
+    <button type="submit" [disabled]="!userForm.valid">Save</button>
+</form>

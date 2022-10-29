@@ -1,0 +1,13 @@
+#street-suite-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#street-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#street {
+    width: 100%;
+}
