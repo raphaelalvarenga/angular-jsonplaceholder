@@ -27,4 +27,8 @@ export class ApiService {
     getAuthor(id: number) {
         return this.http.get<Author>(`${api}/users/${id}`);
     }
+
+    postAuthor(author: Author) {
+        return this.http.post(`${api}/users/`, author);
+    }
 }

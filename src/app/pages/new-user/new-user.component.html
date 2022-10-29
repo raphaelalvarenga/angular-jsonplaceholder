@@ -1,4 +1,4 @@
-<form [formGroup]="userForm">
+<form [formGroup]="userForm" (submit)="saveAuthor()">
     <h3>Personal Info:</h3>
     <label for="name">Name:</label>
     <input id="name" type="text" placeholder="Name" formControlName="name" />
@@ -97,7 +97,12 @@
     <h3>Professional</h3>
     <div>
         <label for="company">Company:</label>
-        <input type="text" placeholder="Company" id="company" />
+        <input
+            type="text"
+            placeholder="Company"
+            id="company"
+            formControlName="company"
+        />
     </div>
 
     <button type="submit" [disabled]="!userForm.valid">Save</button>
